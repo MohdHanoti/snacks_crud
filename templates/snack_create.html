@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<h1>Create a new  Snack </h1>
+<form   method='post'>
+    {% csrf_token %}
+    {{form.as_p}}
+    {% comment %} {{form.as_ul}} {% endcomment %}
+
+    <input type='submit' />
+    <button><a href="{% url 'snack_list' %}">Go back to the list</a></button>
+
+</form>    
+
+{% endblock content%}

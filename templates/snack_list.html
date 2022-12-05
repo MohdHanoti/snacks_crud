@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>welcome to my snack list</h1>
+<button><a href="{% url 'snack_create' %}">Create new</a></button>
+
+{% for snack in object_list %}
+<h3>{{snack.name}}</h3>
+<button><a href="{% url 'snack_detail' snack.id %}">Details</a></button>
+<button><a href="{% url 'snack_update' snack.id %}">Update</a></button>
+<button><a href="{% url 'snack_delete' snack.id %}">Delete</a></button>
+{%endfor%}
+{% endblock content %}
